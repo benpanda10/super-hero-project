@@ -1,0 +1,33 @@
+GET http://localhost:3000/heroes
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/heroes
+Content-Type: application/json
+
+{
+    "superName": "Batman",
+    "realName": "Bruce Wayne",
+    "superpower": "Aura",
+    "powerLevel": 9,
+    "secretIdentity": true
+}
+
+###
+
+PUT http://localhost:3000/heroes/1759964722447
+Content-Type: application/json
+
+{
+    "superName": "Batman",
+    "realName": "Bruce Wayne",
+    "superpower": "None",
+    "powerLevel": 9,
+    "secretIdentity": true
+}
+
+###
+
+DELETE http://localhost:3000/heroes/1759964722447
+Content-Type: application/json

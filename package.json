@@ -1,0 +1,27 @@
+{
+  "name": "super-hero-project",
+  "version": "1.0.0",
+  "description": "A repo to hold week11 super hero project - Captain",
+  "main": "server-db.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "dev": "concurrently \"nodemon server.js\" \"browser-sync start --proxy localhost:3000 --files ['views/**/*.ejs', 'public/**/*.js', 'public/**/*.css'] --reload-delay 1000 --no-inject --port 3001\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-wm:benpanda10/super-hero-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
