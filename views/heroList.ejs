@@ -37,12 +37,101 @@
                                                 <i class="bi bi-lock-fill text-danger"></i>
                                                 Yes
                                                 <% } else { %>
+                                                 <i class="bi bi-unlock-fill text-success"></i>
+                                                No
+                                                <% } %>
                                         </p>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-outline-primary" onclick="editHero('<%= hero.id %>')">
+                                                <i class="bi bi-pencil"></i>Edit
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="deleteHero('<%= hero.id %>')">
+                                                <i class="bi bi-trash"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Edit Mode -->
+                                    <div class="hero-edit" id="edit-<%= hero.id %>" style="display: none;">
+
+                                        <input
+                                        type="text"
+                                        class="form-control mb-2"
+                                        id="superName-<%= hero.id %>"
+                                        value="<%= hero.superName %>"
+                                        placeholder="Super Name">
+
+                                        <input
+                                        type="text"
+                                        class="form-control mb-2"
+                                        id="realName-<%= hero.id %>"
+                                        value="<%= hero.realName %>"
+                                        placeholder="Real Name">
+
+                                        <input
+                                        type="text"
+                                        class="form-control mb-2"
+                                        id="superpower-<%= hero.id %>"
+                                        value="<%= hero.superpower %>"
+                                        placeholder="Superpower">
+
+                                        <input
+                                        type="text"
+                                        class="form-control mb-2"
+                                        id="powerLevel-<%= hero.id %>"
+                                        value="<%= hero.powerLevel %>"
+                                        min="1"
+                                        max="10"
+                                        placeholder="Power Level">
+
+                                        <div class="form-check mb-2">
+                                            <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="secretIdentity-<%= hero.id %>"
+                                            <%= hero.secretIdentity ? 'checked' : '' %>>
+
+                                            <label
+                                            for="secretIdentity-<%= hero.id %>"
+                                            class="form-check-label">
+                                            Secret Identity</label>
+                                        </div>
+
+                                        <div class="d-flex gap-2">
+                                            <button
+                                            class="btn-btn-sm btn-success"
+                                            onclick="updateHero('<%= hero.id %>')">
+                                                <i class="bi bi-check"></i>Save
+                                            </button>
+                                            <button
+                                            class="btn btn-sm btn-secondary"
+                                            onclick="cancelEdit('<%= hero.id %>')">
+                                                <i class="bi bi-x"></i>Cancel
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <% }) %>
+                </div>
+
+                <%= } else { %>
+                <div class="alert alert-info text-center">
+                    <i class="bi bi-info-circe me-2"></i>
+                    No heroes found. Add your first superhero!
+                </div>
+                <% } %>
+
+                <div class="text-center mt-4">
+                    <a href="/" class="btn btn-primary btn-lg">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        Add New Hero
+                    </a>
                 </div>
         </div>
+        <script src="https://cdn.jsdlivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/heroActions.js"></script>
     </body>
 </html>

@@ -6,8 +6,8 @@
     id="<%= id %>"
     name="<%= name %>"
     placeholder="<%= placeholder || '' %>"
-    <%= if (min !== undefined) { %>min="<%= min %>"<% } %>
-    <%= if (max !== undefined) { %>max="<%= max %>"<% } %>
+    <%= if (typeof min !== undefined) { %>min="<%= min %>"<% } %>
+    <%= if (typeof max !== undefined) { %>max="<%= max %>"<% } %>
     <%= if (required) { %>required<%} %>
     >
 </div>
